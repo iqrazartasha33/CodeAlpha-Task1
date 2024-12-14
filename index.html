@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Image Gallery</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="gallery">
+      <h1
+        style="
+          background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD0LSWhVSj-ux8YtaZNq7iV15Qr_-Blc8K-Q&s');
+          color: white;
+        "
+      >
+        Image Gallery
+      </h1>
+      <img
+        src="https://thumbs.dreamstime.com/z/programming-code-learning-%C3%A2%E2%82%AC%E2%80%9C-learn-to-code-text-colored-letters-abstract-technology-background-programming-code-learning-109305083.jpg"
+        alt="Image 1"
+        onclick="openLightbox(0)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.7joP2NTvLYQoRDA-lOVujgHaEo?w=1920&h=1200&rs=1&pid=ImgDetMain"
+        alt="Image 2"
+        onclick="openLightbox(1)"
+      />
+      <img
+        src="https://th.bing.com/th/id/R.d255461480ea2e5d779000e0dc785d54?rik=BLGQ0a6n6sNfDA&pid=ImgRaw&r=0"
+        alt="Image 3"
+        onclick="openLightbox(2)"
+      />
+      <img
+        src="https://images.pexels.com/photos/1387022/pexels-photo-1387022.jpeg?cs=srgb&dl=book-aesthetic-books-old-books-1387022.jpg&fm=jpg"
+        alt="Image 4"
+        onclick="openLightbox(3)"
+      />
+      <img
+        src="https://infographicplaza.com/wp-content/uploads/top-10-programming-languages-infographic-plaza.jpg"
+        alt="Image 5"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.qAYijsKbmUUgytQ327E9VgAAAA?rs=1&pid=ImgDetMain"
+        alt="Image 6"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://i.pinimg.com/originals/f3/10/10/f310102910b76b1312a02189eccd1ac4.jpg"
+        alt="Image 7"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee814a141635615.6257605788a63.jpg"
+        alt="Image 8"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://i.pinimg.com/736x/96/f9/dc/96f9dc81685341af55b7d30c5f13f68b.jpg"
+        alt="Image 9"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://img.freepik.com/premium-photo/fresh-fruitcake-dynamic-food-photography_1061358-3757.jpg"
+        alt="Image 10"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.0GLQc-1xQihZ4nQS28ntAAHaHa?w=4096&h=4096&rs=1&pid=ImgDetMain"
+        alt="Image 11"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://timeforadslr.com/wp-content/uploads/2020/05/architectural-photography.jpg"
+        alt="Image 12"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.dCPV4fTPFZJHXNTyAdHKswHaJu?w=624&h=820&rs=1&pid=ImgDetMain"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://i.pinimg.com/originals/33/7b/31/337b317d601aa91f32a3bf82eea8bdae.jpg"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://www.postingtree.com/wp-content/uploads/2022/07/Web-Development-696x533.jpg"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://i.pinimg.com/736x/dc/be/5f/dcbe5fcc6a9c664cc384f7e96f2a3c6f--glitter-makeup-prom-makeup.jpg"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://th.bing.com/th/id/R.6a90aa818115c4c85b1113e0fd49fedc?rik=zwHhvblF%2buQiHw&riu=http%3a%2f%2fwww.thesiliconboard.com%2fwp-content%2fuploads%2f2020%2f07%2fimage_0-2-1024x683.jpg&ehk=eNEVUz%2bS17WgXnKCAJ6jsEcgVyihtJinkD8EBStgMZM%3d&risl=&pid=ImgRaw&r=0"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+      <img
+        src="https://i.pinimg.com/736x/05/29/47/052947433815535887c078891d976aae.jpg"
+        alt="Image 13"
+        onclick="openLightbox(4)"
+      />
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-image" id="lightboxImage" alt="Current Image" />
+      <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+      <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

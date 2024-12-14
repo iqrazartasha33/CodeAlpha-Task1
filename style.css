@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, rgb(246, 136, 225), rgb(240, 121, 240), #fbc2eb, rgb(255, 123, 218));
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff9a9e, 0 0 20px #fad0c4, 0 0 30px #fbc2eb;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff9a9e, 0 0 40px #fad0c4, 0 0 60px #fbc2eb;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff9a9e, 0 0 20px #fad0c4, 0 0 30px #fbc2eb;
+    }
+}
+
+@keyframes typewriter {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+h1 {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD0LSWhVSj-ux8YtaZNq7iV15Qr_-Blc8K-Q&s');
+    color: white;
+    padding: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    animation: textGlow 2s infinite;
+    overflow: hidden;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    width: 0;
+    animation: typewriter 4s steps(15) 1s 1 normal both, textGlow 2s infinite;
+}
+
+h1::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    border-right: 3px solid white;
+    animation: blink 0.7s step-start infinite;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.gallery img:hover {
+    animation: zoomIn 0.5s ease forwards;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    background-size: 400% 400%;
+    animation: lightboxBg 5s ease infinite;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+@keyframes lightboxBg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-image {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.lightbox .prev,
+.lightbox .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001;
+}
+
+.lightbox .prev {
+    left: 20px;
+}
+
+.lightbox .next {
+    right: 20px;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+    color: #f39c12;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .gallery img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev:hover,
+.next:hover {
+    color: #bbb;
+}
+
+.lightbox img {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.lightbox img.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.lightbox img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
